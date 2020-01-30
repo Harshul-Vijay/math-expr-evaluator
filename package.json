@@ -1,0 +1,42 @@
+{
+  "name": "math-expr-evaluator",
+  "version": "0.0.1",
+  "description": "An expression evaluator.",
+  "main": "dist/evaluator.js",
+  "scripts": {
+    "build": "gulp --silent",
+    "build.verbose": "gulp",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harshul-Vijay/math-expr-evaluator.git"
+  },
+  "keywords": [
+    "math",
+    "expression",
+    "evaluator",
+    "mathematics",
+    "expr",
+    "eval"
+  ],
+  "author": "Harshul Vijay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Harshul-Vijay/math-expr-evaluator/issues"
+  },
+  "homepage": "https://github.com/Harshul-Vijay/math-expr-evaluator#readme",
+  "devDependencies": {
+    "@types/gulp": "^4.0.6",
+    "@types/jest": "^25.1.1",
+    "chalk": "^3.0.0",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-minify": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.1.0",
+    "typescript": "^3.7.5"
+  }
+}
