@@ -36,7 +36,7 @@ export class Lexer {
         });
       });
     } else {
-      throw new Error(`Parenthesis don't match.`);
+      throw new Error(`Parentheses don't match.`);
     }
   }
 
