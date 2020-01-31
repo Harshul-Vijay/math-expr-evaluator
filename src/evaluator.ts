@@ -5,6 +5,9 @@ export class Evaluator {
   protected _result: number = 0;
 
   constructor(expr: string) {
+    if (expr === undefined || expr === null || (expr && expr.length === 0)) {
+      throw new Error('Cannot evaluate empty string');
+    }
     const postfix = new Postfix(expr).postfix;
     const stack = new Stack<number>();
     postfix.map(token => {
