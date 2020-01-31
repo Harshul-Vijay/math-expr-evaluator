@@ -1,13 +1,4 @@
-node_modules
-.git
-dist
-dist/evaluator.js
-dist/helpers.js
-dist/lexer.js
-dist/parser.js
-dist/postfix.js
-dist/sourcemaps/evaluator.js.map
-dist/sourcemaps/helpers.js.map
-dist/sourcemaps/lexer.js.map
-dist/sourcemaps/parser.js.map
-dist/sourcemaps/postfix.js.map
+dist/
+node_modules/
+.git/
+.vscode/
