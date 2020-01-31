@@ -44,4 +44,4 @@ gulp.task('clean', () => {
   return del(['dist'])
 });
 
-gulp.task('default', gulp.series(['clean', 'transpile', 'minify', 'watch']));
+gulp.task('default', gulp.series(['transpile', 'minify', 'watch']));
