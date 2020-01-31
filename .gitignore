@@ -4,3 +4,13 @@ dist/
 node_modules/
 
 package-lock.json
+dist/evaluator.js
+dist/helpers.js
+dist/lexer.js
+dist/parser.js
+dist/postfix.js
+dist/sourcemaps/evaluator.js.map
+dist/sourcemaps/helpers.js.map
+dist/sourcemaps/lexer.js.map
+dist/sourcemaps/parser.js.map
+dist/sourcemaps/postfix.js.map
