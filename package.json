@@ -5,7 +5,9 @@
   "main": "dist/evaluator.js",
   "scripts": {
     "build": "gulp --silent",
+    "build.watch": "gulp watch --silent",
     "build.verbose": "gulp",
+    "build.verbose.watch": "gulp watch --silent",
     "test": "jest",
     "test.watch": "jest --watch"
   },
@@ -39,5 +41,8 @@
     "jest": "^25.1.0",
     "ts-jest": "^25.1.0",
     "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "child_process": "^1.0.2"
   }
 }
