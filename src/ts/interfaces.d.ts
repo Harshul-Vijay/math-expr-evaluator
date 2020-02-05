@@ -1,4 +1,4 @@
-export type TokenType = 'operator' | 'literal' | 'number' | 'lparen' | 
+export type TokenType = 'operator' | 'literal' | 'number' | 'lparen' |
   'rparen' | 'function';
 
 export interface MathConstants {
@@ -35,4 +35,5 @@ export interface MathFunctions {
 export interface Token {
   type: TokenType;
   value: string;
+  sign?: '+' | '-';
 }

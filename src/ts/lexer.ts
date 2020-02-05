@@ -3,7 +3,7 @@ import { Token, TokenType } from "./interfaces";
 
 /**
  * Breaks a given string into tokens.
- * 
+ *
  * @class Lexer
  * @param {string} expr The expression to break into tokens.
  */
@@ -42,7 +42,7 @@ export class Lexer {
 
   /**
    * Returns the type of a given token.
-   * 
+   *
    * @function classify
    * @param {string} token The token to return the type of.
    * @returns {TokenType} The tokens type.
@@ -70,7 +70,7 @@ export class Lexer {
 
   /**
    * Validates parentheses in a given list of tokens.
-   * 
+   *
    * @param {Array<string>} tokens
    */
   validateParentheses(tokens: Array<string>): boolean {

@@ -1,4 +1,4 @@
-import { Lexer } from '../src/lexer';
+import { Lexer } from '../src/ts/lexer';
 
 describe('Lexer test', () => {
   it('should return the correct tokens', () => {

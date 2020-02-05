@@ -3,9 +3,9 @@ import { Stack, precedence } from "./helpers";
 import { Token } from "./interfaces";
 
 /**
- * Converts a given mathematical expression to postfix (Reverse Polish 
+ * Converts a given mathematical expression to postfix (Reverse Polish
  * Notation).
- * 
+ *
  * @param {string} expr The expression to convert into postfix.
  */
 export class Postfix {
@@ -33,7 +33,7 @@ export class Postfix {
         let last = opStack.peekAtLast();
         let precLast = last ? precedence[last.value] : undefined;
         const precToken = precedence[token.value];
-        // NOTE: Do NOT remove the following code that has been commented 
+        // NOTE: Do NOT remove the following code that has been commented
         // intentionally, as it is kinda like a backup.
         /*
           const assocToken = associativity[token.value];

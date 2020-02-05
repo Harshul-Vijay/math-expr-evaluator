@@ -6,13 +6,13 @@
     "moduleResolution": "node",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "dist",
+    "outDir": "out",
     "target": "ES5",
     "sourceMap": true,
-    "sourceRoot": "./src"
+    "sourceRoot": "./src/ts"
   },
   "include": [
-    "src"
+    "src/ts"
   ],
   "exclude": [
     "node_modules"

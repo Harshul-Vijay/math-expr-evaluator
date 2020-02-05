@@ -12,7 +12,7 @@ export class Evaluator {
     const stack = new Stack<number>();
     postfix.map(token => {
       if (token.type === 'number') {
-        stack.push(+token.value);
+        stack.push(+((token.sign === '-' ? '-' : '') + token.value));
       } else if (token.type === 'operator') {
         const op2: number = stack.pop();
         const op1: number = stack.pop();

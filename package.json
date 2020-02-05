@@ -43,6 +43,7 @@
     "typescript": "^3.7.5"
   },
   "dependencies": {
+    "@types/emscripten": "^1.39.1",
     "child_process": "^1.0.2"
   }
 }

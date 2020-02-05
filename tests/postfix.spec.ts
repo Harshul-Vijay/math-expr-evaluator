@@ -1,4 +1,4 @@
-import { Postfix } from '../src/postfix';
+import { Postfix } from '../src/ts/postfix';
 
 describe('Postfix test', () => {
   it('should return the correct postfix expression', () => {

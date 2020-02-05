@@ -1,8 +1,8 @@
-import { Parser } from '../src/parser';
+import { Parser } from '../src/ts/parser';
 
 describe('Parser test', () => {
   it('should return correct tokens', () => {
-    const tokens = new Parser('2 * ( 1 + 1 - 3 / 4 * sin(pi / 4))').tokens;
+    const tokens = new Parser('2 * (1 + 1 - 3 / 4 * sin(pi / 4))').tokens;
     expect(tokens).toStrictEqual([
       {
         type: 'number',

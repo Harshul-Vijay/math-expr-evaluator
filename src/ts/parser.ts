@@ -4,10 +4,10 @@ import { Stack, constants } from "./helpers";
 
 /**
  * Parses a given expression.
- * 
+ *
  * @class Parser
  * @param {string} expr The expression to parse.
- * 
+ *
  * @todo Implement implicit multiplication
  */
 export class Parser {
@@ -35,7 +35,7 @@ export class Parser {
         ltrStack.push(token);
       } else if (token.type === 'number') {
         numStack.push(token);
-      } else if (token.type === 'operator' || token.type === 'rparen' || 
+      } else if (token.type === 'operator' || token.type === 'rparen' ||
         token.type === 'lparen') {
         const lb = this.reduce(ltrStack);
         const nb = this.reduce(numStack);
@@ -54,7 +54,7 @@ export class Parser {
         this.tokens.push(token);
       }
     });
-    // If the letter and number stacks aren't empty, dump their contents to 
+    // If the letter and number stacks aren't empty, dump their contents to
     // the output array
     if (!numStack.isEmpty()) {
       const val = this.reduce(numStack).value;
@@ -79,13 +79,27 @@ export class Parser {
         } else {
           throw new Error(`Undefined constant '${token.value}'`);
         }
+      } else if (token.type === 'number') {
+        const prevToken = this.tokens[index - 1];
+        const prevPrevToken = this.tokens[index - 2];
+        if (!!prevToken && prevToken.type === 'operator' &&
+          prevToken.value === '-' && ((prevPrevToken &&
+          prevPrevToken.type === 'operator') || !prevPrevToken)) {
+          this.tokens[index - 1] = null;
+          this.tokens[index] = {
+            ...token,
+            sign: '-'
+          };
+        }
       }
     });
+
+    this.tokens = this.tokens.filter((token) => token === null ? false : true);
   }
 
   /**
    * Reduces a given `Stack`.
-   * 
+   *
    * @param {Stack<Token>} stack The stack to reduce
    */
   private reduce(stack: Stack<Token>) {

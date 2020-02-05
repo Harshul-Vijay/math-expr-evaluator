@@ -1,5 +1,7 @@
 const chalk = require('chalk');
 const del = require('del');
+const exec = require('child_process').exec;
+const fs = require('fs');
 const gulp = require('gulp');
 const minify = require('gulp-minify');
 const sourcemaps = require('gulp-sourcemaps');
@@ -16,19 +18,40 @@ gulp.task('transpile', async () => {
       includeContent: false,
       sourceRoot: '../src'
     }))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('out'));
 });
+
+/* gulp.task('build:rust', (cb) => {
+  exec('cargo build', (err, stdout, stderr) => {
+    console.log(err);
+    console.log(stdout);
+    console.log(stderr);
+  });
+  cb();
+}) */
+
+gulp.task('build:c++', async (cb) => {
+  const commands = await fs.readFileSync('cpp.bat').toString().split(/\n\r/);
+  await commands.map(async (command, line) => {
+    await exec(`${command}`, (err, stdout, stderr) => {
+      // console.log(err);
+      // console.log(stdout);
+      console.log(chalk.redBright(stderr));
+    });
+  });
+  cb();
+})
 
 gulp.task('minify', () => {
   console.log(chalk.green('[i] Minifying...'));
-  return gulp.src('dist/*.js')
+  return gulp.src('out/*.js')
     .pipe(minify({
       ext: {
         min: '.min.js'
       },
       noSource: true
     }))
-  .pipe(gulp.dest('dist/min'));
+  .pipe(gulp.dest('out/min'));
 });
 
 gulp.task('watch', () => {
@@ -41,7 +64,7 @@ gulp.task('watch', () => {
 
 gulp.task('clean', () => {
   console.log(chalk.red('[i] Cleaning directory...'));
-  return del(['dist'])
+  return del(['out'])
 });
 
-gulp.task('default', gulp.series(['transpile', 'minify', 'watch']));
+gulp.task('default', gulp.series(['transpile', 'minify']));
