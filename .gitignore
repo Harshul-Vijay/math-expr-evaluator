@@ -6,6 +6,7 @@ dist/
 node_modules/
 
 package-lock.json
+test.js
 
 
 #Added by cargo
